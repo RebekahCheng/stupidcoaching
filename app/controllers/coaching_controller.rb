@@ -1,10 +1,9 @@
 class CoachingController < ApplicationController
 
-ANSWERS = ["Ok bye", "Whatever", "See you later!"]
-
   def answer
     @question = params[:query]
-    @answer = ANSWERS.sample
+
+    @question.last == "?" ? @answer = "Silly question!" : @answer = "I dont care!"
   end
 
   def ask
